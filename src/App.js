@@ -7,13 +7,14 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    const storageTodos = JSON.parse(localStorage.getItem("todo"));
+  useState(() => {
+    const storageTodos = JSON.parse(localStorage.getItem("todo-app"));
     if (storageTodos) setTodos(storageTodos);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("todo", JSON.stringify(todos));
+    // storing input name
+    localStorage.setItem("todo-app", JSON.stringify(todos));
   }, [todos]);
 
   function addTodo(todo) {
