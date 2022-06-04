@@ -1,38 +1,169 @@
+body {
+  background-color: #b8bac6;
+  font-family: "Comfortaa", cursive;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
+  width: 30%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo_form {
+  background-color: #f7f7f9;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.todo_form input[type="text"] {
+  background-color: #f7f7f9;
+  border: 0;
+  color: #232529;
+  font-size: 1.6rem;
+  font-family: "Comfortaa", sans-serif;
+  padding: 0.5rem 0;
+  width: 100%;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
+.todo_form input[type="text"]::-webkit-input-placeholder {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo_form input[type="text"]:-ms-input-placeholder {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo_form input[type="text"]::-ms-input-placeholder {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo_form input[type="text"]::placeholder {
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo_form input[type="text"]:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.todo_form input[type="text"]:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.todo_form input[type="text"]:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.todo_form input[type="text"]:focus::placeholder {
+  opacity: 0;
+}
+
+.todo_form button {
+  background-color: #bdc5d3;
+  border-radius: 10px;
+  border: 0;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  margin-left: 1rem;
+  padding: 0.75rem 1.25rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.todo_form button:hover, 
+.todo_form button:focus {
+  background-color: #9ca3ae;
+}
+
+.todo__list {
+  list-style: none;
+  margin: 3rem auto;
+  padding: 0;
+}
+
+.todo__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.8rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  -webkit-animation: append-animate 0.3s ease;
+          animation: append-animate 0.3s ease;
+}
+
+.todo__list li input[type="checkbox"] {
+  color: #fff;
+}
+
+.todo__list li input[type="checkbox"]:checked {
+  background-color: red;
+}
+
+.todo__list button {
+  background-color: transparent;
+  border: 0;
+  font-size: 2.4rem;
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo__list button:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes append-animate {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes append-animate {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
   }
 }

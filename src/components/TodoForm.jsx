@@ -1,14 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import nextId from "react-id-generator";
+import { IoAddSharp } from "react-icons/io5";
 
 function TodoForm({ addTodo }) {
+  const itemID = nextId("todo-");
+
   const [todo, setTodo] = useState({
     id: "",
     task: "",
     completed: false,
   });
-  const htmlId = nextId("todo-");
 
   function handleTaskInputChange(e) {
     setTodo({ ...todo, task: e.target.value });
@@ -17,21 +19,23 @@ function TodoForm({ addTodo }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (todo.task.trim()) {
-      addTodo({ ...todo, id: htmlId });
+      addTodo({ ...todo, id: itemID });
       setTodo({ ...todo, task: "" });
     }
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="todo_form" onSubmit={handleSubmit}>
         <input
           name="task"
           type="text"
           value={todo.task}
           onChange={handleTaskInputChange}
         />
-        <button type="submit">Add</button>
+        <button type="submit">
+          <IoAddSharp />
+        </button>
       </form>
     </div>
   );

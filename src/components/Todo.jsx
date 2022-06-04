@@ -1,4 +1,5 @@
 import React from "react";
+import { TiDeleteOutline } from "react-icons/ti";
 
 function Todo({ todo, toggleComplete, removeTodo }) {
   function handleCheckbox() {
@@ -10,20 +11,22 @@ function Todo({ todo, toggleComplete, removeTodo }) {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <input type="checkbox" onClick={handleCheckbox} />
-      <li
+    <li>
+      <span
         style={{
           color: "#333",
           textAlign: "left",
-          width: "30%",
+
           textDecoration: todo.completed ? "line-through" : "",
         }}
       >
+        <input type="checkbox" onClick={handleCheckbox} />
         {todo.task}
-      </li>
-      <button onClick={handleRemove}>Delete</button>
-    </div>
+      </span>
+      <button onClick={handleRemove}>
+        <TiDeleteOutline />
+      </button>
+    </li>
   );
 }
 

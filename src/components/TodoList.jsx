@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 function TodoList({ todos, toggleComplete, removeTodo }) {
   return (
-    <ul style={{ listStyle: "none" }}>
+    <ul className="todo__list">
       {todos.map((todo) => (
         <Todo
           key={todo.id}
