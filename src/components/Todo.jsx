@@ -20,7 +20,11 @@ function Todo({ todo, toggleComplete, removeTodo }) {
           textDecoration: todo.completed ? "line-through" : "",
         }}
       >
-        <input type="checkbox" onClick={handleCheckbox} />
+        <input
+          type="checkbox"
+          onClick={handleCheckbox}
+          checked={todo.completed ? "checked" : ""}
+        />
         {todo.task}
       </span>
       <button onClick={handleRemove}>
